@@ -54,11 +54,11 @@ summary(fit1)
 contrasts(Carseats$ShelveLoc)
 
 ### Writing R functions
-regplot = function(x, y){
+regplot = function(x, y, ...){
   fit = lm(y~x);
-  plot(y~x);
+  plot(y~x, ...);
   abline(fit, col="red")
 }
 attach(Carseats)
-regplot(Price, Sales)
+regplot(Price, Sales, xlab="Price", ylab="Sales", main="Sales x Price",pch=20)
 
