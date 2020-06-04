@@ -40,7 +40,7 @@ subset(S, isin(S, c(2, 2, 6), ordered = TRUE))
 S <- cards()
 A <- subset(S, suit == "Heart")
 B <- subset(S, rank %in% 7:9)
-
+  
 union(A, B)
 intersect(A, B)
 setdiff(A, B)
@@ -61,3 +61,37 @@ rolldie(1, T)
 
 # An unbalanced coin
 probspace(tosscoin(1), probs = c(0.7, 0.3))
+
+
+x = matrix(c(1, 2, 3, 4), nrow = 2, ncol = 2)
+show(x)
+
+x = matrix(c(1, 2, 3, 4), nrow = 2, ncol = 2, byrow = T)
+show(x)
+
+sqrt(x)
+x^2
+
+
+x = rnorm(50)
+y = rnorm(50, mean = 50, sd=0.1)
+cor(x, y)
+plot(x, y)
+
+mean(x)
+var(x)
+sd(x)
+
+
+setwd("/home/cloves/Documents/we-r")
+jpeg("salvando-plot.jpeg")
+plot(x, y, xlab = "Eixo x", ylab = "Eixo y", main = "Título aqui")
+dev.off()
+
+
+y=x
+f=outer(x, y, function(x, y)cos(y)/(1+x^2))
+contour(x, y, f)
+contour(x, y, f, nlevels = 45, add = T)
+
+
